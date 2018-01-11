@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  
+    <meta charset="UTF-8">
+	
+    <title>Electron</title>
+	
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	
+	<style>
+		body {
+			padding: 20px;
+		}		
+	</style>
+	
+  </head>
+  
+  <body>    
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+	
+	<script>
+	
+		function showInfo(){
+			let content=`
+				We are using Node.js ${process.versions.node}
+				Chromium ${process.versions.chrome},
+				and Electron ${process.versions.electron}.
+			`;
+			document.getElementById("sysinfo").innerHTML=content;
+		}
+	
+	</script>
+    
+	
+	<ul class="list-group">
+	
+		<li class="list-group-item">
+		
+			<ul class="list-group">
+			
+				<li class="list-group-item" id="sysinfo">
+					Press Info to show system info here.
+				</li>				
+				
+			</ul>
+			
+		</li>
+		
+		<li class="list-group-item">
+		
+			<button type="button" class="btn btn-info" onclick="showInfo()">Info</button>
+		
+		</li>
+	
+	</ul>
+
+
+    <script>
+	
+      // You can also require other files to run in this process
+      require('./renderer.js')
+	  
+    </script>
+	
+  </body>
+  
+</html>

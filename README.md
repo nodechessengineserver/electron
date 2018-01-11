@@ -1,0 +1,3 @@
+# Electron
+
+Minimal Electron app.

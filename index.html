@@ -18,21 +18,14 @@
   </head>
   
   <body>    
-    <!-- All of the Node.js APIs are available in this renderer process. -->
+    <!-- All of the Node.js APIs are available in this renderer process. -->    
 	
 	<script>
 	
-		function showInfo(){
-			let content=`
-				We are using Node.js ${process.versions.node}
-				Chromium ${process.versions.chrome},
-				and Electron ${process.versions.electron}.
-			`;
-			document.getElementById("sysinfo").innerHTML=content;
-		}
-	
-	</script>
-    
+      // You can also require other files to run in this process	  
+      const {showInfo}=require('./renderer.js')
+	  
+    </script>
 	
 	<ul class="list-group">
 	
@@ -55,14 +48,6 @@
 		</li>
 	
 	</ul>
-
-
-    <script>
-	
-      // You can also require other files to run in this process
-      require('./renderer.js')
-	  
-    </script>
 	
   </body>
   
